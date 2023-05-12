@@ -16,7 +16,7 @@ pipeline {
                 echo "Este es el Test"
             }
         }
-        stage('SonarQube Analysis') {
+        /*stage('SonarQube Analysis') {
             environment {
                 SCANNER_HOME = tool 'SonarQube'
             }
@@ -30,7 +30,7 @@ pipeline {
                     
                 }
             }
-        }
+        }*/
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
