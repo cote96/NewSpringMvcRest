@@ -59,4 +59,15 @@ pipeline {
             }
         }
     }
+    post {
+        always{
+            slackSend(channel: '#modulo-3-actividad-grupal', message: 'Se inició la ejecución :rocket: del PIPELINE - Grupo3')
+        }
+        failure{
+            slackSend(channel: '#modulo-3-actividad-grupal', message: ':warning: Falló la ejecución del PIPELINE - Grupo3 :warning:')
+        }
+        success{
+            slackSend(channel: '#modulo-3-actividad-grupal', message: 'La ejecución del PIPELINE fue exitosa - Grupo3  :smile:')
+        }
+    }
 }
