@@ -18,10 +18,10 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             environment {
-                SCANNER_HOME = tool 'SonarQube Conexion'
+                SCANNER_HOME = tool 'SonarQube'
             }
             steps {
-                withSonarQubeEnv(credentialsId: 'SonarGrupo3', installationName: 'SonarQube123') {
+                withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarQube') {
                     sh """$SCANNER_HOME/bin/sonar-scanner \\
                     -Dsonar.projectKey=tarea \\
                     -Dsonar.projectName=Tarea3 \\
