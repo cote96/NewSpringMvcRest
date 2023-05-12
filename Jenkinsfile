@@ -1,14 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Initialize') {
-            steps {
-                echo "Esta es el inicio"
-            }
-        }
         stage('Build') {
             steps {
-                echo "Este es el build"
+                //echo "Este es el build"
+                sh "mvn clean package"
             }
         }
         stage('Test') {
