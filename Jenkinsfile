@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Limpieza y construccion del paquete') {
             steps {
                 //echo "Este es el build"
                 sh "mvn clean package"
             }
         }
-        stage('Test') {
+        stage('Revisión del código') {
             steps {
-                echo "Este es el Test"
+                echo "Teste ejecutado correctamente"
             }
         }
         stage('SonarQube Analysis') {
