@@ -23,15 +23,15 @@ pipeline {
             steps {
                 withSonarQubeEnv(credentialsId: 'SonarGrupo3', installationName: 'SonarQube123') {
                     sh """$SCANNER_HOME/bin/sonar-scanner \\
-                    -Dsonar.projectKey=modulo3 \\
-                    -Dsonar.projectName=modulo3 \\
+                    -Dsonar.projectKey=tarea \\
+                    -Dsonar.projectName=Tarea3 \\
                     -Dsonar.sources=./ \\
                     -Dsonar.java.binaries=target/classes/ """
                     
                 }
             }
         }
-        stage("Publish to Nexus Repository Manager") {
+        /*stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: 'pom.xml'
@@ -61,6 +61,6 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
 }
