@@ -40,7 +40,7 @@ pipeline {
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
                             protocol: 'http',
-                            nexusUrl: '192.168.1.203:8081',
+                            nexusUrl: '192.168.1.86:8081',
                             groupId: pom.groupId,
                             version: pom.version,
                             repository: 'Modulo3-hosted',
